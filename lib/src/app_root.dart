@@ -6,10 +6,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../modules/bio/bio_screen.dart';
 import '../modules/home/home_screen.dart';
 import '../modules/homedelivery/delivery_screen.dart';
 import '../modules/login/login_screen.dart';
+import '../modules/payment/payment_screen.dart';
+import '../modules/photoprofile/photoprofile_screen.dart';
+import '../modules/signup/signup_screen.dart';
 import '../modules/splach/splach_screen.dart';
+import '../modules/upload/upload_screen.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -28,7 +33,7 @@ class MyApp extends StatelessWidget {
 
           // You can use the library anywhere in the app even in theme
 
-          home: Login(),
+          home: ProfilePhoto(),
         );
       },
     );

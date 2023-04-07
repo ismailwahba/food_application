@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/modules/component/components.dart';
 
 import '../../shared/hexcolor/hexcolor.dart';
 
@@ -62,25 +63,10 @@ class _DeliveryState extends State<Delivery> {
             SizedBox(
               height: 30.0.h,
             ),
-            Container(
-              width: ScreenUtil().setWidth(157),
-              height: ScreenUtil().setHeight(57),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(15),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [HexColor('#53E88B'), HexColor('#15BE77')],
-                ),
-              ),
-              child: MaterialButton(
-                onPressed: () {},
-                child: Text(
-                  "Next",
-                  style: TextStyle(color: Colors.white, fontSize: 16.0.sp),
-                ),
-              ),
-            )
+            defaultButton(
+                text: "Next",
+                width: ScreenUtil().setWidth(157),
+                height: ScreenUtil().setHeight(57))
           ],
         ),
       )),
