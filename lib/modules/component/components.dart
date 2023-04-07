@@ -12,22 +12,27 @@ Widget defaultForm(
         Widget? suffix,
         required String? Function(String?)? validator,
         required var controller,
+        EdgeInsetsGeometry? contentPadding,
+        double? width,
+        double? height,
         TextStyle? hintStyle}) =>
     Container(
-      // width: ScreenUtil().setWidth(325),
-      // height: ScreenUtil().setHeight(57),
+      width: width,
+      height: height,
       child: TextFormField(
           // controller: emailController,
           keyboardType: TextInputType.text,
           controller: controller,
           decoration: InputDecoration(
             // border: BorderRadius.circular(20),
-            contentPadding: EdgeInsets.all(25),
+            contentPadding: contentPadding,
             filled: true,
             fillColor: HexColor('#ffffff'),
             hintText: hintText,
             hintStyle: hintStyle,
             prefixIcon: prefix,
+            focusColor: Colors.green,
+            iconColor: Colors.green,
             suffixIcon: suffix,
             enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(20),
@@ -102,7 +107,7 @@ Widget defaultButton(
     );
 
 Widget defaultPayment({required String url, double? width, double? height}) =>
-    Container(
+    SizedBox(
       width: width,
       height: height,
       child: InkWell(
