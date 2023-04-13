@@ -5,7 +5,7 @@ import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:ecommerce_app/modules/login/login_screen.dart';
-import 'package:food_app/modules/home/home_screen.dart';
+import 'package:food_app/modules/comfort/comfort_screen.dart';
 
 import '../../shared/hexcolor/hexcolor.dart';
 import '../component/components.dart';

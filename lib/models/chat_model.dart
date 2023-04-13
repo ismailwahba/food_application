@@ -1,0 +1,4 @@
+class ChatModel{
+  String? image;
+  
+}

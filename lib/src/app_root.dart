@@ -6,16 +6,22 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../models/messaging/messaging_screen.dart';
 import '../modules/bio/bio_screen.dart';
+import '../modules/chat/chat_screen.dart';
 import '../modules/congrats/congrats_screen.dart';
 import '../modules/congratssucceful/congratssuccseful_screen.dart';
 import '../modules/forgetpasswoed/forgetpassword_screen.dart';
+import '../modules/comfort/comfort_screen.dart';
 import '../modules/home/home_screen.dart';
 import '../modules/homedelivery/delivery_screen.dart';
 import '../modules/location/location_screen.dart';
 import '../modules/login/login_screen.dart';
+import '../modules/mainlayout/main_Layout.dart';
 import '../modules/payment/payment_screen.dart';
 import '../modules/photoprofile/photoprofile_screen.dart';
+import '../modules/popularmenu/popularmenu_screen.dart';
+import '../modules/popularrestaurant/popular_restaurant.dart';
 import '../modules/resetpassword/resetpassword_screen.dart';
 import '../modules/signup/signup_screen.dart';
 import '../modules/splach/splach_screen.dart';
@@ -39,7 +45,7 @@ class MyApp extends StatelessWidget {
 
           // You can use the library anywhere in the app even in theme
 
-          home: CongratsSuccseful(),
+          home: Messaging(),
         );
       },
     );

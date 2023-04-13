@@ -44,14 +44,20 @@ class _BioState extends State<Bio> {
                     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     // crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      IconButton(
-                          // iconSize: 30,
-                          onPressed: () {},
-                          icon: Image.asset(
-                            "images/Icon Back.png",
-                            // height: ScreenUtil().setHeight(100),
-                            // width: 50,
-                          )),
+                      Container(
+                        width: ScreenUtil().setWidth(50),
+                        height: ScreenUtil().setHeight(50),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15.r),
+                            color: HexColor('#F9A84D').withOpacity(.20)),
+                        child: IconButton(
+                            // iconSize: 30,
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.arrow_back_ios_sharp,
+                              color: HexColor('#DA6317'),
+                            )),
+                      ),
                       // Image.asset("images/Patternbio.png")
                     ],
                   ),

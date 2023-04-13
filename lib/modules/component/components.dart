@@ -132,3 +132,56 @@ Widget defaultPayment({required String url, double? width, double? height}) =>
         ),
       ),
     );
+
+Widget defaultSearchForm() => Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        SizedBox(
+          width: ScreenUtil().setWidth(250),
+          child: TextFormField(
+            // controller: emailController,
+            keyboardType: TextInputType.text,
+            // controller: controller,
+            decoration: InputDecoration(
+                filled: true,
+                fillColor: HexColor('#F9A84D').withOpacity(.05),
+                hintText: "what do you want to order?",
+                hintStyle: TextStyle(
+                  color: HexColor('#DA6317').withOpacity(.40),
+                ),
+                prefixIcon: Icon(
+                  Icons.search,
+                  color: HexColor('#F9A84D'),
+                  size: 24.w,
+                ),
+                enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: BorderSide(
+                        // style: BorderStyle.none,
+                        color: Color.fromARGB(45, 168, 159, 159),
+                        width: .3.w)),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10.r),
+                  borderSide: BorderSide(
+                    color: HexColor('#F9A84D'),
+                  ),
+                )),
+          ),
+        ),
+        // SizedBox(
+        //   width: 5.w,
+        // ),
+        IconButton(
+          iconSize: 50.w,
+          onPressed: () {},
+          icon: Image.asset(
+            "images/Filter Icon.png",
+            // height: ScreenUtil().setHeight(100),
+            // width: 150.w,
+            // height: 165.h,
+            // fit: BoxFit.fitHeight,
+            // height: 150,
+          ),
+        )
+      ],
+    );
