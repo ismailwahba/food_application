@@ -16,18 +16,18 @@ class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Scaffold(
-        body: SafeArea(
+      body: Container(
+        decoration: const BoxDecoration(
+            image: DecorationImage(
+          alignment: Alignment.topRight,
+          image: AssetImage("images/Patternbio.png"),
+          fit: BoxFit.contain,
+        )),
+        child: SafeArea(
             child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 10.w, vertical: 20.h),
-            decoration: const BoxDecoration(
-                image: DecorationImage(
-              alignment: Alignment.topRight,
-              image: AssetImage("images/Patternbio.png"),
-              // fit: BoxFit.cover,
-            )),
             child: Column(
               children: [
                 Row(
@@ -96,7 +96,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           children: [
                             Image.asset(
                               'images/Photo Profile.png',
-                              height: 87.h,
+                              height: 80.h,
                               fit: BoxFit.fitHeight,
                             ),
                             SizedBox(
@@ -172,7 +172,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           children: [
                             Image.asset(
                               'images/guy.png',
-                              height: 87.h,
+                              height: 80.h,
                               fit: BoxFit.fitHeight,
                             ),
                             SizedBox(
@@ -248,7 +248,7 @@ class _ChatScreenState extends State<ChatScreen> {
                           children: [
                             Image.asset(
                               'images/leslie.png',
-                              height: 87.h,
+                              height: 80.h,
                               fit: BoxFit.fitHeight,
                             ),
                             SizedBox(

@@ -8,14 +8,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../shared/hexcolor/hexcolor.dart';
 import '../component/components.dart';
 
-class ProfilePhoto extends StatefulWidget {
-  const ProfilePhoto({super.key});
+class UploadPhotoProfile extends StatefulWidget {
+  const UploadPhotoProfile({super.key});
 
   @override
-  State<ProfilePhoto> createState() => _ProfilePhotoState();
+  State<UploadPhotoProfile> createState() => _UploadPhotoProfileState();
 }
 
-class _ProfilePhotoState extends State<ProfilePhoto> {
+class _UploadPhotoProfileState extends State<UploadPhotoProfile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
