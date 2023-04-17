@@ -32,8 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
               image: AssetImage("images/Patternbio.png"),
               fit: BoxFit.fitWidth,
             )),
-            child: SafeArea(
-                child: Container(
+            child: Container(
               margin: EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
               child: Column(
                 children: [
@@ -407,7 +406,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
-            )),
+            ),
           ),
         )),
       ),

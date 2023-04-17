@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
 
           // You can use the library anywhere in the app even in theme
 
-          home: PaymentTwo(),
+          home: VoucherPromo(),
         );
       },
     );

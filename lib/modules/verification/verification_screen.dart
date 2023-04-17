@@ -85,62 +85,56 @@ class _VerificationState extends State<Verification> {
                   ),
                   SizedBox(height: 30.h),
                   Container(
-                    width: ScreenUtil().setWidth(347),
-                    height: ScreenUtil().setHeight(103),
-                    // height: height,
-                    child: Container(
-                        // width: ScreenUtil().setWidth(347),
-                        // height: ScreenUtil().setHeight(103),
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 20.w, vertical: 20.h),
-                        decoration: BoxDecoration(
-                            // shape: BoxShape.circle,
-                            borderRadius: BorderRadius.circular(22.r),
-                            color: HexColor('#FFFFFF'),
-                            boxShadow: [
-                              BoxShadow(
-                                color: HexColor('#125A6CEA'),
-                                spreadRadius: 9,
-                                blurRadius: 9,
-                                offset:
-                                    Offset(0, 3), // changes position of shadow
-                              ),
-                            ]),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            VerificationCode(
-                              textStyle: TextStyle(
-                                  fontSize: 33.0.sp,
-                                  color: HexColor('#09051C')),
-                              keyboardType: TextInputType.number,
-                              underlineColor: Colors
-                                  .amber, // If this is null it will use primaryColor: Colors.red from Theme
-                              length: 4,
-                              cursorColor: Colors
-                                  .blue, // If this is null it will default to the ambient
-                              // clearAll is NOT required, you can delete it
-                              // takes any widget, so you can implement your design
-                              clearAll: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                              ),
-                              onCompleted: (String value) {
-                                // setState(() {
-                                //   _code = value;
-                                // }
-                                // );
-                              },
-                              onEditing: (bool value) {
-                                // setState(() {
-                                //   _onEditing = value;
-                                // });
-                                // if (!_onEditing) FocusScope.of(context).unfocus();
-                              },
+                      // width: ScreenUtil().setWidth(347),
+                      // height: ScreenUtil().setHeight(103),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 20.w, vertical: 20.h),
+                      decoration: BoxDecoration(
+                          // shape: BoxShape.circle,
+                          borderRadius: BorderRadius.circular(22.r),
+                          color: HexColor('#FFFFFF'),
+                          boxShadow: [
+                            BoxShadow(
+                              color: HexColor('#125A6CEA'),
+                              spreadRadius: 9,
+                              blurRadius: 9,
+                              offset:
+                                  Offset(0, 3), // changes position of shadow
                             ),
-                          ],
-                        )),
-                  )
+                          ]),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          VerificationCode(
+                            textStyle: TextStyle(
+                                fontSize: 33.0.sp, color: HexColor('#09051C')),
+                            keyboardType: TextInputType.number,
+                            underlineColor: Colors
+                                .amber, // If this is null it will use primaryColor: Colors.red from Theme
+                            length: 4,
+                            cursorColor: Colors
+                                .blue, // If this is null it will default to the ambient
+                            // clearAll is NOT required, you can delete it
+                            // takes any widget, so you can implement your design
+                            clearAll: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                            ),
+                            onCompleted: (String value) {
+                              // setState(() {
+                              //   _code = value;
+                              // }
+                              // );
+                            },
+                            onEditing: (bool value) {
+                              // setState(() {
+                              //   _onEditing = value;
+                              // });
+                              // if (!_onEditing) FocusScope.of(context).unfocus();
+                            },
+                          ),
+                        ],
+                      ))
                 ],
               ),
               Row(
