@@ -106,29 +106,35 @@ Widget defaultButton(
       ),
     );
 
-Widget defaultPayment({required String url, double? width, double? height}) =>
+Widget defaultPayment({
+  required String url,
+  double? width,
+  double? height,
+}) =>
     SizedBox(
       width: width,
       height: height,
-      child: InkWell(
-        onTap: () {},
-        child: Container(
-          decoration: BoxDecoration(
-              // shape: BoxShape.circle,
-              borderRadius: BorderRadius.circular(20.r),
-              color: HexColor('#FFFFFF'),
-              boxShadow: [
-                BoxShadow(
-                  color: HexColor('#125A6CEA'),
-                  spreadRadius: 9,
-                  blurRadius: 9,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
-              ]),
-          child: Image.asset(
-            url,
-            // width: ScreenUtil().setWidth(100),
-          ),
+      child: Container(
+        decoration: BoxDecoration(
+            // shape: BoxShape.circle,
+            borderRadius: BorderRadius.circular(20.r),
+            color: HexColor('#FFFFFF'),
+            boxShadow: [
+              BoxShadow(
+                color: HexColor('#125A6CEA'),
+                spreadRadius: 9,
+                blurRadius: 9,
+                offset: Offset(0, 3), // changes position of shadow
+              ),
+            ]),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Image.asset(
+              url,
+              // width: ScreenUtil().setWidth(100),
+            ),
+          ],
         ),
       ),
     );

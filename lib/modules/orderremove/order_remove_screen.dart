@@ -4,19 +4,40 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:food_app/models/order_model.dart';
 
 import '../../shared/hexcolor/hexcolor.dart';
 import '../component/components.dart';
 
-class ConfirmOrder extends StatefulWidget {
-  const ConfirmOrder({super.key});
+class OrederRemove extends StatefulWidget {
+  const OrederRemove({super.key});
 
   @override
-  State<ConfirmOrder> createState() => _ConfirmOrderState();
+  State<OrederRemove> createState() => _OrederRemoveState();
 }
 
-class _ConfirmOrderState extends State<ConfirmOrder> {
+class _OrederRemoveState extends State<OrederRemove> {
   @override
+  List<OrderModel> ordermodel = [
+    OrderModel(
+        image: "images/Menu details.png",
+        spacy: "Spacy fresh crab",
+        waroenk: "Waroenk kita",
+        dollar: "\$ 35"),
+    OrderModel(
+        image: "images/Menu Photo (2).png",
+        spacy: "Spacy fresh crab",
+        waroenk: "Waroenk kita",
+        dollar: "\$ 35"),
+    OrderModel(
+        image: "images/Menu Photo1.png",
+        spacy: "Spacy fresh crab",
+        waroenk: "Waroenk kita",
+        dollar: "\$ 35"),
+  ];
+  // List<String> item=[];
+  // int index = 0;
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -56,7 +77,6 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                     ],
                   ),
                   SizedBox(height: 25.h),
-
                   Row(
                     children: [
                       Text(
@@ -70,165 +90,51 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 15.h),
-                  Container(
-                    // alignment: Alignment.center,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
-                    // width: ScreenUtil().setWidth(335),
-                    // height: ScreenUtil().setHeight(108),
-                    decoration: BoxDecoration(
-                        // shape: BoxShape.circle,
-                        borderRadius: BorderRadius.circular(22.r),
-                        color: HexColor('#FFFFFF'),
-                        boxShadow: [
-                          BoxShadow(
-                            color: HexColor('#125A6CEA'),
-                            spreadRadius: 9,
-                            blurRadius: 9,
-                            offset: Offset(0, 3), // changes position of shadow
+                  ListView.separated(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: ordermodel.length,
+                    itemBuilder: (context, index) => Slidable(
+                      // background: buildSwipeA,
+                      key: ValueKey<OrderModel>(ordermodel[index]),
+                      startActionPane: ActionPane(
+                        motion: const ScrollMotion(),
+                        dismissible: DismissiblePane(onDismissed: () {}),
+                        children: [
+                          SlidableAction(
+                            borderRadius: BorderRadius.circular(22),
+                            // onPressed: (){},
+                            backgroundColor: HexColor("#FEAD1D"),
+                            foregroundColor: Colors.white,
+                            icon: Icons.delete,
+                            label: 'Delete',
+                            onPressed: (BuildContext context) {},
                           ),
-                        ]),
-                    child: Column(
-                      // crossAxisAlignment: CrossAxisAlignment.center,
-                      // mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Deliver To",
-                              style: TextStyle(
-                                  color: HexColor('#3B3B3B').withOpacity(.30),
-                                  fontSize: 14.sp,
-                                  letterSpacing: .5),
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              child: ShaderMask(
-                                shaderCallback: (Rect bounds) {
-                                  return LinearGradient(
-                                    colors: [
-                                      HexColor('#53E88B'),
-                                      HexColor('#15BE77')
-                                    ],
-                                  ).createShader(bounds);
-                                },
-                                child: Text(
-                                  'Edit',
-                                  style: TextStyle(
-                                    fontSize: 14.0.sp,
-                                    letterSpacing: .5,
-                                    // fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
+                        ],
+                      ),
+                      child: Container(
+                        padding: EdgeInsets.symmetric(
+                            horizontal: 10.w, vertical: 20.h),
+                        decoration: BoxDecoration(
+                            // shape: BoxShape.circle,
+                            borderRadius: BorderRadius.circular(20.r),
+                            color: HexColor('#FFFFFF'),
+                            boxShadow: [
+                              BoxShadow(
+                                color: HexColor('#125A6CEA'),
+                                spreadRadius: 9,
+                                blurRadius: 9,
+                                offset:
+                                    Offset(0, 3), // changes position of shadow
                               ),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
+                            ]),
+                        child: Row(
                           children: [
                             Image.asset(
-                              'images/Icon Location.png',
+                              '${ordermodel[index].image}',
                               // width: 70.w,
-                              height: 33.h,
+                              height: 62.h,
                               fit: BoxFit.fitHeight,
-                              // width: ScreenUtil().setWidth(100),
-                            ),
-                            // SizedBox(
-                            //   width: 20.w,
-                            // ),
-                            Column(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "4517 Washington Ave. Manchester,\nKentucky 39495",
-                                  style: TextStyle(
-                                      fontSize: 15.0.sp,
-                                      color: HexColor('#09051C'),
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 20.h,
-                  ),
-                  Container(
-                    // alignment: Alignment.center,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
-                    // width: ScreenUtil().setWidth(335),
-                    // height: ScreenUtil().setHeight(108),
-                    decoration: BoxDecoration(
-                        // shape: BoxShape.circle,
-                        borderRadius: BorderRadius.circular(22.r),
-                        color: HexColor('#FFFFFF'),
-                        boxShadow: [
-                          BoxShadow(
-                            color: HexColor('#125A6CEA'),
-                            spreadRadius: 9,
-                            blurRadius: 9,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                        ]),
-                    child: Column(
-                      // crossAxisAlignment: CrossAxisAlignment.center,
-                      // mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Text(
-                              "Payment Method",
-                              style: TextStyle(
-                                  color: HexColor('#3B3B3B').withOpacity(.30),
-                                  fontSize: 14.sp,
-                                  letterSpacing: .5),
-                            ),
-                            TextButton(
-                              onPressed: () {},
-                              child: ShaderMask(
-                                shaderCallback: (Rect bounds) {
-                                  return LinearGradient(
-                                    colors: [
-                                      HexColor('#53E88B'),
-                                      HexColor('#15BE77')
-                                    ],
-                                  ).createShader(bounds);
-                                },
-                                child: Text(
-                                  'Edit',
-                                  style: TextStyle(
-                                    fontSize: 14.0.sp,
-                                    letterSpacing: .5,
-                                    // fontWeight: FontWeight.bold,
-                                    color: Colors.white,
-                                  ),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          // crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Image.asset(
-                              'images/paypal.png',
-                              width: 86.w,
-                              height: 23.h,
-                              fit: BoxFit.fitWidth,
                               // width: ScreenUtil().setWidth(100),
                             ),
                             SizedBox(
@@ -239,22 +145,103 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "2121 6352 8465 ****",
+                                  "${ordermodel[index].spacy}",
+                                  style: TextStyle(
+                                      fontSize: 15.0.sp,
+                                      color: HexColor('#09051C'),
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 3.h,
+                                ),
+                                Text(
+                                  "${ordermodel[index].waroenk}",
                                   style: TextStyle(
                                       fontSize: 14.0.sp,
-                                      color: HexColor('#3B3B3B'),
+                                      color:
+                                          HexColor('#3B3B3B').withOpacity(.30),
                                       fontWeight: FontWeight.bold),
+                                ),
+                                SizedBox(
+                                  height: 3.h,
+                                ),
+                                ShaderMask(
+                                  shaderCallback: (Rect bounds) {
+                                    return LinearGradient(
+                                      colors: [
+                                        HexColor('#53E88B'),
+                                        HexColor('#15BE77')
+                                      ],
+                                    ).createShader(bounds);
+                                  },
+                                  child: Text(
+                                    '${ordermodel[index].dollar}',
+                                    style: TextStyle(
+                                      fontSize: 19.0.sp,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white,
+                                    ),
+                                  ),
                                 ),
                               ],
                             ),
+                            SizedBox(
+                              width: 30.w,
+                            ),
+                            Row(
+                              children: [
+                                Container(
+                                  // width: ScreenUtil().setWidth(40),
+                                  // height: ScreenUtil().setHeight(40),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          index--;
+                                        });
+                                      },
+                                      icon: Image.asset('images/Icon Minus.png',
+                                          height: 26.h,
+                                          // width: 30.w,
+                                          fit: BoxFit.fitHeight)),
+                                ),
+                                Text(
+                                  "$index",
+                                  style: TextStyle(
+                                      fontSize: 16.sp,
+                                      color: HexColor('#181818')),
+                                ),
+                                Container(
+                                  // width: ScreenUtil().setWidth(40),
+                                  // height: ScreenUtil().setHeight(40),
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: IconButton(
+                                      onPressed: () {
+                                        setState(() {
+                                          index++;
+                                        });
+                                      },
+                                      icon: Image.asset('images/Icon Plus.png',
+                                          height: 26.h,
+                                          // width: 30.w,
+                                          fit: BoxFit.fitHeight)),
+                                ),
+                              ],
+                            )
                           ],
                         ),
-                      ],
+                      ),
+                    ),
+                    separatorBuilder: (BuildContext context, int index) =>
+                        SizedBox(
+                      height: 10.h,
                     ),
                   ),
-                  SizedBox(
-                    height: 10.h,
-                  ),
+                  SizedBox(height: 15.h),
 
                   // SizedBox(
                   //   height: 15.h,
@@ -262,8 +249,6 @@ class _ConfirmOrderState extends State<ConfirmOrder> {
                 ],
               ),
               Container(
-                // height: ScreenUtil().setHeight(150),
-                // width: MediaQuery.of(context).size.width * .9,
                 padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
                 decoration: BoxDecoration(
 

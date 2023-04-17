@@ -17,7 +17,9 @@ class OrederDetails extends StatefulWidget {
 
 class _OrederDetailsState extends State<OrederDetails> {
   @override
-  int index = 0;
+  int indexOne = 0;
+  int indexTwo = 0;
+  int indexThree = 0;
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
@@ -60,7 +62,7 @@ class _OrederDetailsState extends State<OrederDetails> {
                   Row(
                     children: [
                       Text(
-                        "Notification",
+                        "Order details",
                         style: TextStyle(
                             fontSize: 25.0.sp,
                             color: HexColor('#09051C'),
@@ -171,7 +173,7 @@ class _OrederDetailsState extends State<OrederDetails> {
                               child: IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      index--;
+                                      indexOne--;
                                     });
                                   },
                                   icon: Image.asset('images/Icon Minus.png',
@@ -180,7 +182,7 @@ class _OrederDetailsState extends State<OrederDetails> {
                                       fit: BoxFit.fitHeight)),
                             ),
                             Text(
-                              "$index",
+                              "$indexOne",
                               style: TextStyle(
                                   fontSize: 16.sp, color: HexColor('#181818')),
                             ),
@@ -201,7 +203,7 @@ class _OrederDetailsState extends State<OrederDetails> {
                               child: IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      index++;
+                                      indexOne++;
                                     });
                                   },
                                   icon: Image.asset('images/Icon Plus.png',
@@ -317,7 +319,7 @@ class _OrederDetailsState extends State<OrederDetails> {
                               child: IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      index--;
+                                      indexTwo--;
                                     });
                                   },
                                   icon: Image.asset('images/Icon Minus.png',
@@ -326,7 +328,7 @@ class _OrederDetailsState extends State<OrederDetails> {
                                       fit: BoxFit.fitHeight)),
                             ),
                             Text(
-                              "$index",
+                              "$indexTwo",
                               style: TextStyle(
                                   fontSize: 16.sp, color: HexColor('#181818')),
                             ),
@@ -347,7 +349,7 @@ class _OrederDetailsState extends State<OrederDetails> {
                               child: IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      index++;
+                                      indexTwo++;
                                     });
                                   },
                                   icon: Image.asset('images/Icon Plus.png',
@@ -463,7 +465,7 @@ class _OrederDetailsState extends State<OrederDetails> {
                               child: IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      index--;
+                                      indexThree--;
                                     });
                                   },
                                   icon: Image.asset('images/Icon Minus.png',
@@ -472,7 +474,7 @@ class _OrederDetailsState extends State<OrederDetails> {
                                       fit: BoxFit.fitHeight)),
                             ),
                             Text(
-                              "$index",
+                              "$indexThree",
                               style: TextStyle(
                                   fontSize: 16.sp, color: HexColor('#181818')),
                             ),
@@ -493,7 +495,7 @@ class _OrederDetailsState extends State<OrederDetails> {
                               child: IconButton(
                                   onPressed: () {
                                     setState(() {
-                                      index++;
+                                      indexThree++;
                                     });
                                   },
                                   icon: Image.asset('images/Icon Plus.png',
