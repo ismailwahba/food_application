@@ -30,6 +30,8 @@ import '../modules/orderdetails/orderdetails_screen.dart';
 import '../modules/orderremove/order_remove_screen.dart';
 import '../modules/payment/payment_screen.dart';
 import '../modules/paymenttwo/payment_two_screen.dart';
+import '../modules/profile/profile_screen.dart';
+import '../modules/rainbow/ranbow_screen.dart';
 import '../modules/raterestaurant/rate_restaurant_screen.dart';
 import '../modules/ringing/ringing_screen.dart';
 import '../modules/shipping/shipping_screen.dart';
@@ -60,7 +62,7 @@ class MyApp extends StatelessWidget {
 
           // You can use the library anywhere in the app even in theme
 
-          home: Wijie(),
+          home: MainLayoutScreen(),
         );
       },
     );
